@@ -1,0 +1,139 @@
+@font-face {
+    font-family: myFont;
+    src: url(font/fuente.ttf);
+}
+
+h1 {
+    font-family: myFont;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imagenes/background.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2; /* Ajusta la opacidad según sea necesario */
+    z-index: -1; /* Asegura que el fondo esté detrás del contenido */
+}
+
+
+#game-container {
+    display: flex;
+    gap: 20px;
+}
+
+#crucigrama-container, #clues-container {
+    width: 480px;
+    height: 480px;
+    border: 2px solid #333;
+}
+
+#crucigrama-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 2px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
+    text-align: center;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #fff;
+    position: relative;
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    background-color: transparent;
+    outline: none;
+}
+
+.cell.black {
+    background-color: #333;
+}
+
+.cell .number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 10px;
+    color: #555;
+}
+
+#clues-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#clues-container table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+#clues-container th, #clues-container td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 0;
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+button#check-btn:hover, button#reset-btn:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+#footer {
+    padding: 30px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+  }
+  
+  #footer .credits {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+  }
